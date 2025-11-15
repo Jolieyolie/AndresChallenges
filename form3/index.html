@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <title>Who is older?</title>
+  </head>
+  <body>
+    <h1>Let's play the 'Who's older' game</h1>
+    <form class="container" onsubmit="return false">
+      <div>
+        <input
+          type="text"
+          id="name1"
+          placeholder="Please enter first player's name"
+        />
+        <input
+          type="number"
+          id="age1"
+          placeholder="Please enter first player'sage"
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          id="name2"
+          placeholder="Please enter second player's name"
+        />
+        <input
+          type="number"
+          id="age2"
+          placeholder="Please enter second player's age"
+        />
+      </div>
+      <button type="submit" id="submitBtn" onclick="compareAge()">Play</button>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>

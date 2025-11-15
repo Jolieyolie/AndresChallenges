@@ -1,0 +1,40 @@
+body {
+  height: 100vh;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  position: relative;
+}
+h1 {
+  display: flex;
+  margin-bottom: 20px;
+  position: absolute;
+  justify-content: center;
+  /* align-items: center;  */
+}
+.container {
+  display: flex;
+  position: absolute;
+  top: 45%;
+  justify-content: center; /* horizontal centering */
+  align-items: center; /* vertical centering */
+  gap: 10px; /* space between input and button */
+}
+.container input {
+  width: 350px; /* adjust based on your placeholder length */
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.container button {
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2c2fd7;
+  color: white;
+  cursor: pointer;
+  font-size: large;
+}
