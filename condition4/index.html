@@ -8,9 +8,7 @@
   </head>
   <body>
     <h1>What is the AQI today?</h1>
-    <label for="AQI" class="AirQualityLabel"
-      >Please select a number between 0 to 150</label
-    >
+    <label for="AQIRange">Please select a number between 0 to 150</label>
     <input
       id="AQIRange"
       class="slider"
@@ -21,10 +19,8 @@
       aria-label="AQI level"
       onchange="updateUI()"
     />
-    <p class="AirQualityResult">
-      The Air Quality Index (AQI) is:
-      <p id="AQIOutput" aria-live="polite" aria-atomic="true"></p>
-      <script src="script.js"></script>
-    </p>
+    <p class="AirQualityResult">The Air Quality Index (AQI) is:</p>
+    <p id="AQIOutput" aria-live="polite" aria-atomic="true"></p>
+    <script src="script.js"></script>
   </body>
 </html>
