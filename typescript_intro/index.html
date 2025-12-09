@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link href="./dist/output.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>typescript_intro</title>
   </head>
@@ -46,36 +47,84 @@
     </section>
     <section
       class="h-screen flex flex-col items-center justify-center bg-gray-100 gap-8"
+      id="text_color"
     >
-      <h2 class="text-center text-xl font-semibold">
+      <h2 class="text-center text-xl font-semibold" id="h2">
         The color of these text would change once you click the following magic
         balls!
       </h2>
-      <div class="magic-balls flex gap-10">
+      <div class="magic_balls flex gap-10">
         <!-- Magic Ball 1 -->
-        <div
-          class="magic-ball relative w-36 h-36 rounded-full overflow-hidden cursor-pointer shadow-xl"
-          id="magic-ball-1"
-        >
-          <div class="absolute inset-0 bg-green-700"></div>
+        <div class="magic_ball" id="magic_ball_1">
           <div
-            class="absolute inset-0 bg-purple-700 transform rotate-45 origin-center"
-          ></div>
+            class="magic-ball relative w-24 h-24 rounded-full overflow-hidden cursor-pointer shadow-xl"
+          >
+            <div
+              class="absolute inset-0 bg-green-700 clip-left-half cursor-pointer z-10"
+              id="green"
+            ></div>
+            <div
+              class="absolute inset-0 bg-purple-700 clip-right-half cursor-pointer z-20"
+              id="purple"
+            ></div>
+          </div>
+        </div>
+        <!-- Magic Ball 2 -->
+        <div class="magic_ball" id="magic_ball_2">
+          <div
+            class="magic-ball relative w-24 h-24 rounded-full overflow-hidden cursor-pointer shadow-xl"
+          >
+            <div
+              class="absolute inset-0 bg-yellow-700 clip-left-half cursor-pointer z-10"
+              id="brown"
+            ></div>
+            <div
+              class="absolute inset-0 bg-gray-700 clip-right-half cursor-pointer z-20"
+              id="gray"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Magic Ball 3 -->
+        <div class="magic_ball" id="magic_ball_3">
+          <div
+            class="magic_ball relative w-24 h-24 rounded-full overflow-hidden cursor-pointer shadow-xl"
+          >
+            <div
+              class="absolute inset-0 bg-orange-500 clip-left-half cursor-pointer z-10"
+              id="orange"
+            ></div>
+            <div
+              class="absolute inset-0 bg-black clip-right-half cursor-pointer z-20"
+              id="black"
+            ></div>
+          </div>
+        </div>
+        <!-- Magic Ball 4 -->
+        <div class="magic_ball" id="magic_ball_4">
+          <div
+            class="magic-ball relative w-24 h-24 rounded-full overflow-hidden cursor-pointer shadow-xl"
+          >
+            <div
+              class="absolute inset-0 bg-blue-300 clip-left-half cursor-pointer z-10"
+              id="lightblue"
+            ></div>
+            <div
+              class="absolute inset-0 bg-blue-700 clip-right-half cursor-pointer z-20"
+              id="darkblue"
+            ></div>
+          </div>
         </div>
       </div>
-      <!-- <div class="magic-ball" id="magic-ball-2"></div>
-      <div class="magic-ball" id="magic-ball-3"></div>
-      <div class="magic-ball" id="magic-ball-4"></div> -->
-      <!-- </div> -->
     </section>
-    <!-- <style>
+    <style>
       .clip-left-half {
-        clip-path: polygon(0 0, 100% 0, 0 100%);
+        clip-path: polygon(0 0, 100% 100%, 0 100%);
       }
       .clip-right-half {
-        clip-path: polygon(100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(100% 0, 100% 100%, 0 0);
       }
-    </style> -->
+    </style>
     <section>
       <h2 class="text-2xl font-semibold gap-16 mt-8 mb-8">Intro Typescript</h2>
       <p>
@@ -124,7 +173,11 @@
           </div>
         </div>
         <div class="bg-gray-100 rounded-lg p-4 mb-4">
-          <p>Net Amount (Price without VAT) in Euro*</p>
+          <p id="displayText_1">
+            Net Amount (Price without VAT) in Euro<span class="text-red-500"
+              >*</span
+            >
+          </p>
           <input
             type="number"
             id="net_amount"
@@ -135,8 +188,9 @@
         </div>
         <div class="rounded-lg p-4 mb-4">
           <button
-            class="bg-purple-700 hover:bg-purple-800 text-white font-semibold px-4 py-2 rounded w-full"
+            class="!bg-indigo-700 hover:bg-purple-800 text-white font-semibold px-4 py-2 rounded w-full"
             id="calculate_button"
+            onclick="calculateVAT()"
           >
             calculate
           </button>
@@ -148,7 +202,7 @@
           <p id="result_vat">o.oo€</p>
         </div>
         <div class="bg-gray-100 rounded-lg p-4 mb-4">
-          <p>Gross Amount (Final Price)</p>
+          <p id="displayText_2">Gross Amount (Final Price)</p>
           <p id="result_gross">o.oo€</p>
         </div>
       </div>
