@@ -15,12 +15,30 @@
   <body>
     <div id="root"></div>
 
-    <header>
-      <nav class="flex flex-row justify-around">
+    <header class="relative bg-white">
+      <nav class="flex justify-between items-center px-6 py-6">
         <a href="#" class="text-2xl font-[Raleway] text-[#666666] mt-8 mb-8"
           >Shapely Demo</a
         >
-        <ul class="flex flex-row gap-8 list-none mt-8 mb-8">
+        <button
+      id="menu-btn"
+      class="lg:hidden text-gray-700 focus:outline-none"
+        >
+          <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </button>
+
+        <ul id="menu" class="hidden flex-col items-center gap-6 py-6 px-4
+             absolute top-full left-0 w-full bg-white
+             lg:static lg:flex lg:flex-row lg:w-auto lg:py-0 lg:gap-8">
           <li>
             <a
               href="#hero_image"
@@ -71,11 +89,11 @@
       <!-- hero_image -->
       <section
         id="hero_image"
-        class="flex flex-col items-center justify-center gap-6 py-12 bg-[url('/src/projekt-imgs/Header_Hintergrundbild_Kaffee_Land.png')] h-[500px] bg-cover bg-center"
+        class="flex flex-col items-center justify-center text-center gap-6 py-12 bg-[url('/src/projekt-imgs/Header_Hintergrundbild_Kaffee_Land.png')] h-[500px] bg-cover bg-center"
       >
         <div class="flex items-center justify-center">
           <h1
-            class="text-white text-5xl font-[Raleway] font-bold bg-opacity-50 p-4 rounded"
+            class="text-white md:text-5xl text-[2.5rem] font-[Raleway] font-bold bg-opacity-50 p-4 rounded"
           >
             We Change Everything WordPress
           </h1>
@@ -100,7 +118,7 @@
       <!-- blog section -->
       <section
         id="blog"
-        class="flex flex-row items-center justify-center gap-6 py-12 mt-[96px] px-[171px]"
+        class="flex flex-col md:flex-row items-center justify-center py-12 px-6 mt-[96px] md:px-12 lg:px-[171px]"
       >
         <div class="flex flex-row items-center justify-center gap-4">
           <img src="src/projekt-imgs/macbook.png" alt="image of macbook" />
@@ -127,7 +145,7 @@
       <!-- portfolio section -->
       <section
         id="portfolio"
-        class="flex flex-row items-center justify-center gap-6 py-12 mt-[96px] px-[171px]"
+        class="flex flex-col md:flex-row items-center justify-center gap-6 py-12 px-6 mt-[96px] md:px-12 lg:px-[171px]"
       >
         <div class="flex flex-col items-start justify-center gap-4 px-12">
           <h2 class="flex flex-col font-[Raleway] font-bold items-start">
@@ -158,10 +176,10 @@
           style="background-image: url('src/projekt-imgs/parallax.jpeg')"
         >
           <div
-            class="flex flex-col justify-center items-center px-12 mx-auto gap-6"
+            class="flex flex-col justify-center items-center px-4 mx-auto gap-8"
           >
             <h2
-              class="flex flex-row font-[Raleway] text-white text-5xl font-bold items-center mb-12"
+              class="flex flex-row font-[Raleway] text-white md:text-5xl text-[2.5rem] font-bold items-center justify-center mb-4"
             >
               Small Parallax Section
             </h2>
@@ -172,7 +190,7 @@
               nisi ut aliquip ex ea commodo consequat.
             </p>
             <button
-              class="w-52 bg-indigo-500 text-white font-[Raleway] px-8 py-3 font-semibold hover:bg-indigo-800 transition-color duration-200 shadow-lg hover:shadow-xl transform:-translate-y-1"
+              class=" bg-indigo-500 text-white font-[Raleway] px-8 py-3 font-semibold hover:bg-indigo-800 transition-color duration-200 shadow-lg hover:shadow-xl transform:-translate-y-1"
             >
               MORE INFO
             </button>
@@ -182,7 +200,7 @@
       <!-- level 1 section -->
       <section
         id="level_1"
-        class="flex flex-col items-center justify-center gap-6 py-12 mt-[96px] px-[171px]"
+        class="flex flex-col items-center justify-center gap-6 py-12 px-4"
       >
         <h2 class="flex flex-col font-[Raleway] font-bold items-center">
           Limitless Options
@@ -205,7 +223,7 @@
       <!-- shop section -->
       <section
         id="shop"
-        class="flex flex-col items-center bg-black justify-center py-12 mt-[96px] px-[171px]"
+        class="flex flex-col items-center bg-black justify-center py-12 px-6 w-full"
       >
         <h2
           class="flex flex-col text-white font-[Raleway] font-bold items-center mt-18"
@@ -217,18 +235,140 @@
         >
           Here is our latest projects. You'll love them!
         </p>
-        <div class="grid grid-row-3 grid-cols-4">
-          <img src="src/projekt-imgs/gallery_1.png" alt="project_1" />
-          <img src="src/projekt-imgs/gallery_2.png" alt="project_2" />
-          <img src="src/projekt-imgs/gallery_3.png" alt="project_3" />
-          <img src="src/projekt-imgs/gallery_4.png" alt="project_4" />
-          <img src="src/projekt-imgs/gallery_5.png" alt="project_5" />
-          <img src="src/projekt-imgs/gallery_6.png" alt="project_6" />
-          <img src="src/projekt-imgs/gallery_7.png" alt="project_7" />
-          <img src="src/projekt-imgs/gallery_8.png" alt="project_8" />
-          <img src="src/projekt-imgs/gallery_9.png" alt="project_9" />
-          <img src="src/projekt-imgs/gallery_10.png" alt="project_10" />
-        </div>
+
+        <div
+          class="grid w-full max-w-7xl lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-6"
+        >
+          <div class="relative aspect-[4/3] z-10 w-full overflow-hidden">
+            <img
+              src="src/projekt-imgs/gallery_1.png"
+              alt="project_1"
+              class="absolute inset-0 object-cover w-full h-full"
+            />
+            <div
+              class="pointer-events-none absolute inset-0 flex items-center justify-center text-center text-white block lg:hidden"
+            >
+              project#16
+            </div>
+          </div>
+
+          <div class="relative aspect-[4/3] w-full -mt-72 md:mt-0 overflow-hidden">
+            <img
+              src="src/projekt-imgs/gallery_2.png"
+              alt="project_2"
+              class="absolute inset-0 object-cover w-full h-full"
+            />
+            <div
+              class="pointer-events-none absolute inset-0 flex items-center justify-center text-center text-white block lg:hidden"
+            >
+              project#15
+            </div>
+          </div>
+
+          <div class="relative z-10 aspect-[4/3] w-full overflow-hidden">
+            <img
+              src="src/projekt-imgs/gallery_3.png"
+              alt="project_3"
+              class="absolute inset-0 object-cover w-full h-full"
+            />
+            <div
+              class="pointer-events-none absolute inset-0 flex items-center justify-center text-center text-white block lg:hidden"
+            >
+              project#14
+            </div>
+          </div>
+
+          <div class="relative aspect-[4/3] w-full -mt-72 md:mt-0 overflow-hidden">
+            <img
+              src="src/projekt-imgs/gallery_4.png"
+              alt="project_4"
+              class="absolute inset-0 translate-y-2 object-cover w-full h-full"
+            />
+            <div
+              class="pointer-events-none absolute inset-0 flex items-center justify-center text-center text-white block lg:hidden"
+            >
+              project#13
+            </div>
+          </div>
+
+          <div class="relative z-10 aspect-[4/3] w-full overflow-hidden">
+            <img
+              src="src/projekt-imgs/gallery_5.png"
+              alt="project_5"
+              class="absolute inset-0 object-cover w-full h-full"
+            />
+            <div
+              class="pointer-events-none absolute inset-0 flex items-center justify-center text-center text-white block lg:hidden"
+            >
+              project#12
+            </div>
+          </div>
+
+          <div class="relative aspect-[4/3] w-full -mt-72 md:mt-0 overflow-hidden">
+            <img
+              src="src/projekt-imgs/gallery_6.png"
+              alt="project_6"
+              class="absolute inset-0 object-cover w-full h-full"
+            />
+            <div
+              class="pointer-events-none absolute inset-0 flex items-center justify-center text-center text-white block lg:hidden"
+            >
+              project#11
+            </div>
+          </div>
+
+          <div class="relative z-10 aspect-[4/3] w-full overflow-hidden">
+            <img
+              src="src/projekt-imgs/gallery_7.png"
+              alt="project_7"
+              class="absolute object-cover w-full h-full"
+            />
+            <div
+              class="pointer-events-none absolute inset-0 flex items-center justify-center text-center text-white block lg:hidden"
+            >
+              project#10
+            </div>
+          </div>
+
+          <div class="relative aspect-[4/3] w-full -mt-72 md:mt-0 overflow-hidden">
+            <img
+              src="src/projekt-imgs/gallery_8.png"
+              alt="project_8"
+              class="absolute inset-0 object-cover w-full h-full"
+            />
+            <div
+              class="pointer-events-none absolute inset-0 flex items-center justify-center text-center text-white block lg:hidden"
+            >
+              project#9
+            </div>
+          </div>
+
+          <div class="relative z-10 aspect-[4/3] w-full overflow-hidden">
+            <img
+              src="src/projekt-imgs/gallery_9.png"
+              alt="project_9"
+              class="absolute inset-0 object-cover w-full h-full"
+            />
+            <div
+              class="pointer-events-none absolute inset-0 flex items-center justify-center text-center text-white block lg:hidden"
+            >
+              project#8
+            </div>
+          </div>
+
+          <div class="relative aspect-[4/3] w-full -mt-72 md:mt-0 overflow-hidden">
+            <img
+              src="src/projekt-imgs/gallery_10.png"
+              alt="project_10"
+              class="absolute inset-0 object-cover w-full h-full"
+            />
+            <div
+              class="pointer-events-none absolute inset-0 flex items-center justify-center text-center text-white block lg:hidden"
+            >
+              project#7
+            </div>
+          </div>
+
       </section>
       <!-- customer reviews section -->
       <section class="flex flex-col items-center justify-center w-full">
@@ -274,7 +414,7 @@
         >
           Our Main Clients
         </h2>
-        <div class="grid grid-cols-4 mt-8 mb-8 justify-around gap-40">
+        <div class="grid md:grid-cols-4 sm:grid-cols-2 mt-8 mb-8 gap-40">
           <img src="src/projekt-imgs/html_logo.png" alt="customers icons" />
           <img src="src/projekt-imgs/css_logo.png" alt="customers icons" />
           <img src="src/projekt-imgs/less_logo.png" alt="customers icons" />
@@ -283,7 +423,7 @@
       </section>
       <section class="bg-gray-100">
         <div
-          class="flex flex-row items-center justify-around gap-6 py-12 px-12 mx-auto"
+          class="flex flex-col sm:flex-row items-center justify-between gap-6 py-12 px-6 mx-auto sm:px-12 max-w-6xl text-center lg:text-left sm:text-left"
         >
           <p class="font-[Raleway] text-black">
             Do you like this awesome WordPress theme?
@@ -291,7 +431,7 @@
           <button>
             <a
               href="#"
-              class="w-52 bg-indigo-500 text-white font-[Raleway] px-8 py-3 font-semibold hover:bg-indigo-800 transition-color duration-200 shadow-lg hover:shadow-xl transform:-translate-y-1"
+              class="inline-block bg-indigo-500 text-white font-[Raleway] px-8 py-3 font-semibold hover:bg-indigo-800 transition-color duration-200 shadow-lg hover:shadow-xl transform:-translate-y-1"
               >DOWNLOAD NOW</a
             >
           </button>
@@ -299,7 +439,7 @@
       </section>
       <footer>
         <div
-          class="flex flex-row items-center justify-around gap-6 py-12 px-12 mx-auto bg-gray-900"
+          class="flex flex-row gap-6 py-12 px-12 mx-auto bg-gray-900"
         >
           <p class="flex font-[Raleway] text-white items-start lg:text-2xl">
             Theme by Colorlib Powered by WordPress
@@ -307,6 +447,14 @@
         </div>
       </footer>
     </main>
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+
+      menuBtn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
