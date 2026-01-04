@@ -6,9 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ts-guessanumber</title>
   </head>
-  <body>
+  <body class="flex flex-col justify-center items-center bg-black text-white">
+    
+    <h1 class="text-3xl font-bold flex justify-center mt-6">Guess a number between 1 and 100</h1>
+    <div class="w-3/5 flex flex-col px-12 py-8 border-2 border-white rounded mb-3 mt-6">
+      <p>In how many rounds you think you can guess the number?</p>
+      <form class="grid">
+        <input type="radio" name="guess" id="four">
+        <label for="radio">4</label>
+        <input type="radio" name="guess" id="five">
+        <label for="radio">5</label>
+        <input type="radio" name="guess" id="six">
+        <label for="radio">6</label>
+        <input type="radio" name="guess" id="custom">
+        <label for="radio">Custom</label>
+      </form>
+    </div>
+    <input type="text" id="result">
+    <label for="result"></label>
+    <input type="submit" id="submit">
+    <label for="submit">guess</label>
+    <button class="bg-white text-balck">guess</button>
     <div id="app"></div>
-    <h1 class="text-3xl font-bold underline text-blue-500">Guess a number between 1 and 100</h1>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
