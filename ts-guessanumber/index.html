@@ -10,23 +10,31 @@
     
     <h1 class="text-3xl font-bold flex justify-center mt-6">Guess a number between 1 and 100</h1>
     <div class="w-3/5 flex flex-col px-12 py-8 border-2 border-white rounded mb-3 mt-6">
-      <p>In how many rounds you think you can guess the number?</p>
-      <form class="grid">
-        <input type="radio" name="guess" id="four">
-        <label for="radio">4</label>
-        <input type="radio" name="guess" id="five">
-        <label for="radio">5</label>
-        <input type="radio" name="guess" id="six">
-        <label for="radio">6</label>
-        <input type="radio" name="guess" id="custom">
-        <label for="radio">Custom</label>
+      <p class="text-center mb-4">In how many rounds you think you can guess the number?</p>
+      <form class="grid grid-cols-2 gap-4 mt-4">
+        <div class="justify-self-center col-start-1">
+          <input type="radio" name="guess" id="four">
+          <label for="four">4</label>
+        </div>
+        <div class="col-start-2 flex items-center gap-2 w-full">
+          <input type="radio" name="guess" id="five">
+          <label for="five">5</label>
+        </div>
+        <div class="justify-self-center col-start-1">
+          <input type="radio" name="guess" id="six">
+          <label for="six">6</label>
+        </div>
+        <div class="col-start-2 flex items-center gap-2 w-full">
+          <input type="radio" name="guess" id="custom">
+          <label for="custom">Custom</label>
+        </div>
       </form>
     </div>
-    <input type="text" id="result">
-    <label for="result"></label>
-    <input type="submit" id="submit">
-    <label for="submit">guess</label>
-    <button class="bg-white text-balck">guess</button>
+    <div class="w-3/5 flex flex-col justify-center items-center px-12 py-8 border-2 border-white rounded mb-3 mt-6">
+      <input type="text" id="result" class="bg-white px-4 py-2 text-black rounded text-center" placeholder="enter your guess here">
+      <label for="result"></label>
+      <button class="bg-white text-black px-6 py-2 mt-2 rounded">Guess</button>
+    </div>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
