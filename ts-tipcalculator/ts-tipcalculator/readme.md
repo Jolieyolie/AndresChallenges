@@ -1,0 +1,2 @@
+
+![whimiscal flowchart](image.png)

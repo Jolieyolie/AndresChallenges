@@ -6,12 +6,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ts-tipcalculator</title>
   </head>
-  <body>
-    <div class="bg-blue-500 text-white p-4 rounded">
-  Tailwind v4 is working 🚀
-    </div>
 
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
-</html>
+  <body class="bg-slate-900 text-white flex flex-col items-center min-h-screen justify-between rounded-lg">
+    <div>
+      <!-- header -->
+      <header class="bg-linear-to-r from-[#0891B2] to-[#1E3A5F] w-2xl rounded-lg">
+      <div class="flex justify-center items-center flex-col py-6 border border-slate-700 rounded-lg">
+        <h1 class="text-2xl bold">Tip Calculator</h1>
+        <p class="text-slate-300">Split bills fairly with your friends</p>
+      </div>
+    </header>
+
+    <!-- input section -->
+    <div class="bg-slate-800 w-2xl p-8 rounded-lg flex flex-col gap-6">
+      <div class="flex flex-col py-3 p-6 text-2xl text-slate-300 gap-2">
+        <!-- bill amount -->
+        <label for="bill-amount" class="mb-3">Bill Amount</label>
+        <div class="relative h-14 bg-[#020617] border-[#334155] border-2 rounded-lg text-xl">
+          <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">
+            💲
+          </span>
+          <input type="number" id="bill-amount" min="0.00" step="0.01" class="w-full h-full pl-10 pr-3 bg-transparent text-white text-xl outline-none"/>
+        </div>  
+        </div>
+         <!-- number of people -->
+      <div class="flex flex-col py-3 p-6 text-2xl text-slate-300 gap-2">
+        <label for="numberPeople">Number of People</label>
+        <div class="relative h-14 bg-[#020617] border-[#334155] border-2 rounded-lg text-xl">
+          <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">
+            👤
+          </span>
+          <input type="text" id="number-people" min="1" class="w-full h-full pl-10 pr-3 bg-transparent text-white text-xl outline-none"/>
+        </div>
+      </div>
+    <!-- service quality -->
+      <div class="grid grid-cols-3 gap-12 px-6" id="tip-grid">
+        <button
+          class="tip-btn flex flex-col justify-center items-center w-36 h-36
+                bg-[#020617] border-slate-700 border-2 rounded-lg text-xl
+                data-[selected=true]:bg-[#164E63] data-[selected=true]:border-[#22D3EE] 
+                transition-colors duration-200"
+          value="0.02"
+        >
+          &#128528;<br />Poor<br />2%
+        </button>
+
+        <button
+          class="tip-btn flex flex-col justify-center items-center w-36 h-36
+                bg-[#020617] border-slate-700 border-2 rounded-lg text-xl
+                data-[selected=true]:bg-[#164E63] data-[selected=true]:border-[#22D3EE] 
+                transition-colors duration-200"
+          value="0.1"
+        >
+          &#128522;<br />Average<br />10%
+        </button>
+
+        <button
+          class="tip-btn flex flex-col justify-center items-center w-36 h-36
+                bg-[#020617] border-slate-700 border-2 rounded-lg text-xl
+                data-[selected=true]:bg-[#164E63] data-[selected=true]:border-[#22D3EE] 
+                transition-colors duration-200"
+          value="0.2"
+        >
+          &#128525;<br />Excellent<br />20%
+        </button>
+      </div>
+  <!-- results and reset -->
+      <div >
+        <div class="w-auto h-72 bg-[#164E63] flex border-2 border-slate-700 rounded-lg mt-6 flex-col justify-around p-6 text-2xl text-slate-300">
+          <div class="flex items-center justify-between gap-2">
+            <div>
+              <span>&#128181;</span>
+              <span>Tip Amount</span>
+            </div>
+            <span id="tip-amount">$0.00</span>
+          </div>
+          <div class="flex items-center justify-between gap-2">
+            <div>
+              <span>&#128203;</span>
+              <span>Total Bill</span>
+            </div>
+            <span id="total-bill">$0.00</span>
+          </div>
+          <div class="flex items-center justify-between gap-2 border-t border-slate-600 pt-4">
+            <div>
+              <span>&#128101;</span>
+              <span>Per Person</span>
+            </div>
+            <span id="per-person" class="text-green-400 font-bold">$0.00</span>
+          </div>
+        </div>
+        <div class="w-auto h-12 border-2 border-slate-700 text-slate-300 text-xl font-bold rounded-lg flex justify-center items-center mt-6 active:bg-[#164E63] active:border-[#22D3EE]">
+          <button id="reset">RESET CALCULATOR</button> 
+        </div>
+      </div>
+      <div id="app"></div>
+      <script type="module" src="/src/main.ts"></script>
+      </div>
+  
+      <footer class="w-full bg-slate-900 border-slate-600 flex justify-center gap-2 pt-4 pb-8 rounded-lg">Made with &#10084; for learning Typescript</footer>
+    </body>
+  </html>
