@@ -1,0 +1,135 @@
+# Array-TS-Level-1
+- Learning objective: After completing this exercise, you will be able to define arrays in TypeScript.
+- Create three arrays with the following names:
+    - bucketList
+    - luckyNumbers
+    - favoritePeople
+- Each of these arrays contains 3 values:
+- for bucketList, 3 places you would like to visit
+- for luckyNumbers, your 3 lucky numbers (think of something 😉)
+- for favoritePeople, your 3 favorite people
+- Display each array in the console
+
+# Array-TS-Level-2
+- Learning objective: After this exercise, you will be able to access individual values in an array using their index and understand and apply how 0-based indexing works.
+- Now that you know how to define an array, you can try accessing individual values.
+- Remember that arrays are 0-indexed, meaning they start counting at 0.
+- To access a single element, use the name of the array followed by square brackets and the index
+- For example: bucketList[1] returns the value at position 1 in the bucketList array
+- Display the individual values from your previously created arrays bucketList, luckyNumbers, and favoritePeople in the console
+
+# Array-TS-Level-3
+- Learning objective: After this exercise, you will be able to determine the length of an array
+- You can now create arrays and output their individual values
+- To determine the number of values in an array, you can use [length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global%5FObjects/Array/length)
+- Use length to check how many values are in your arrays
+- Output the result to the console (console.log)
+- Pay attention to the result that the method displays in the console
+
+# Array-TS-Level-4
+- Learning objective: After completing this exercise, you will understand how to use the array method [push](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global%5FObjects/Array/push).
+- Create an array and add to it using the array method push().
+- With push(), you can add one or more values to the end of an array at the same time
+- Use push() to add at least 2 new values to your array
+- Use console.log() to display the content and length of your array before and after adding new values.
+- Observe the changes in the console
+
+![image.png](attachment:a191bb9e-6e11-42c1-98ef-497a703a545b:image.png)
+
+### 💡Note
+To learn about the push() Method click [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+
+# Array-TS-Level-5
+- Learning objective: After this exercise, you will understand how to use the array method pop().
+- If you add something, you must also be able to remove it again. The array method **pop()** is used for this. Pop() removes the last value from an array and returns the removed value.
+- Use the arrays from the previous exercise again. Remove one value from each of your arrays and have the removed value output to the console
+- For better visualization, you can have the array output before pop(), then the removed value, and then the array again. Take a look at the result preview
+
+# ☝🏼 Note
+- To continue working with the removed value, you should store pop() in a variable, otherwise the return value of pop() will be lost
+- Example: let lastValue: number = array.pop();
+- To learn about pop() method click [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
+
+# Array-TS-Level-5
+- Learning objective: After this exercise, you will understand how to use the array method pop().
+- If you add something, you must also be able to remove it again. The array method **pop()** is used for this. Pop() removes the last value from an array and returns the removed value.
+- Use the arrays from the previous exercise again. Remove one value from each of your arrays and have the removed value output to the console
+- For better visualization, you can have the array output before pop(), then the removed value, and then the array again. Take a look at the result preview
+
+# ☝🏼 Note
+- To continue working with the removed value, you should store pop() in a variable, otherwise the return value of pop() will be lost
+- Example: let lastValue: number = array.pop();
+- To learn about pop() method click [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
+
+# Array-TS-Level-6
+- Learning objective: Understand and apply the array method shift().
+- The array method **shift()** is very similar to pop(). This is because shift() also removes a value from an array, but this time it is the first value. The first value is removed and the other values move forward by one with their index.
+- Remove the first value from your favoritePeople array and display it in the console.
+- Here, too, you can display the array in the console before and after for a better understanding.
+
+# Array-TS-Level-7
+- Learning objective: After this exercise, you will understand how to use the array method unshift().
+- The array method unshift() is very similar to push(). This is because unshift() also adds a value to an array, but this time at the beginning. It is possible to insert one or more values at the beginning of an array using unshift(). The other values are increased by their index by the number of newly added values.
+- Use unshift() to add at least 2 new values to the array of cities.
+- Use console.log() to display the content and length of your array before and after adding new values. Observe the changes in the console.
+
+![image.png](attachment:31617fde-b3c2-4f63-8133-6c49ab6b3ad7:image.png)
+
+Array-TS-Level-8
+- Learning objective: After completing this exercise, you will understand the array method slice() and be able to use it.
+- You are already familiar with the method [slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global%5FObjects/Array/slice) from strings. Here, too, you can use slice() to cut values from an array and get a new array in return. Please note that slice() requires a start index and, optionally, an end index.
+- Create a new array called “favoriteTravelDestinations.”
+- Insert two places in the middle that you don't like so much
+- Use slice() to cut the two values out of the array
+- Display your array “favoriteTravelDestinations” in the console once before slicing and once after slicing. You will notice that the original array has not been changed. This means that slice() creates a copy of the values and does not affect the original array
+
+![image.png](attachment:c462996c-e3ac-4b8b-aa5e-383796233f74:image.png)
+
+# Array-TS-Level-9
+- Learning objective: After this exercise, you will understand the differences between push-pop and shift-unshift.
+- Create a variable of type number array.
+- The array initially has the following values:
+- 23
+- 54
+- 75
+- Use the push method to insert 5 values into your array.
+- Use the unshift method to add 5 values to the front of the array.
+- Use the pop method to remove 2 values from the end of your array.
+- Use the shift method to remove 2 values from the front of the array.
+- After each change, display the result in the console.
+
+![image.png](attachment:85eaf3f5-555b-4065-b817-f31e14db17cc:image.png)
+
+# ☝🏼 Note
+- When adding and removing values at the beginning and end of a TypeScript array, it can be difficult to remember which method does what. Here are some tips:
+- Unshift and shift move the entire array sideways (by adding and removing elements at the beginning)
+- Push and Pop do NOT move the array sideways (because they add and remove elements at the end)
+- A very simple mnemonic would be:
+    - For the pairs Push/Pop and Unshift/Shift, the method with more letters extends the array
+    - Push/Pop - Push has more letters than Pop = Push adds element(s) to the array; Pop removes element(s)
+    - Unshift/Shift - Unshift has more letters than Shift = Unshift adds element(s) to the array, Shift removes element(s)
+
+# Array-TS-Level-10
+- Learning objective: After completing this exercise, you will be able to create arrays, make copies of arrays using various methods (such as concat(), slice(), and the spread operator), and make changes to the copies without altering the original array.
+- Create an array called oldHollywoodActors of type string with the following content:
+    - “Marlon Brando,” “Audrey Hepburn,” “Elizabeth Taylor,” “Cary Grant,” “Paul Newman,” and “Doris Day”
+- Create a new variable actorsReference and assign the array directly to it
+- Add “Marilyn Monroe”
+- Display the contents of oldHollywoodActors and actorsReference
+- Use concat() to create a copy of oldHollywoodActors
+- Create another copy with slice()
+- Create a third copy with the spread operator
+- Change a different value in each of the three copies
+- Display the contents of the original array and all copies
+
+# Array-TS-Level-11
+- Learning objective: After this exercise, you will understand the string method [split()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global%5FObjects/String/split?retiredLocale=de) and be able to use it.
+- Now we will look at a string method that returns an array. That's why split() is always covered first in arrays. With split(), you can create an array from a string. You can specify how the string should be split in the () brackets of split().
+- Use the following string as an example:
+    - const futuramaQuote = “It's okay, Bender. I like cooking too. Oh, you're a dollar naughtier than most. My fellow Earthicans, as I have explained in my book ‘Earth in the Balance’, and the much more popular ‘Harry Potter and the Balance of Earth’, we need to defend our planet against pollution. Also dark wizards.”
+- Use the result preview in the browser console to find out where the string has been split
+- It is important that you temporarily store the individual processes in extra variables, because otherwise you will not be able to continue working with the return value of split()
+
+![image.png](attachment:1fb6875e-b845-4138-807c-b95726772de3:image.png)
+
+![image.png](attachment:4546eea5-0536-49a6-a5e1-bad98d24e28d:image.png)
