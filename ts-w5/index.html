@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ts-w5</title>
+  </head>
+  <body>
+    <div>
+      <h1 class="text-4xl bg-blue-500 pt-5">Table for metals</h1>
+      <table border="1">
+        <thead>
+          <tr class="grid grid-cols-3 gap-6">
+            <th>Name</th>
+            <th>Price Per Gram</th>
+            <th>Change</th>
+          </tr>
+        </thead>
+        <tbody id="metal-table"></tbody>
+      </table>
+    </div>
+    <div class="bg-yellow-500">
+      <h1 class="text-4xl pt-7">Singers</h1>
+      <div>
+        <input id="searchInput" type="text" placeholder="Search by Name">
+        <button id="search-button">Search</button>
+      </div>
+      <div id="table-container">
+        <table>
+          <thead>
+            <tr class="grid grid-cols-4 gap-6">
+              <th class="gap-12">name</th>
+              <th class="gap-12">country</th>
+              <th class="gap-12">period_active</th>
+              <th class="gap-12">genre</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
