@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ts-caeser-cipher</title>
+  </head>
+  <body class="bg-black flex justify-center h-screen flex-col gap-4">
+    <h1 class="flex text-4xl text-blue-900 justify-center font-bold">Caeser Cipher Tool</h1>
+    <div class="text-white bg-gray-700 text-2xl p-4 rounded flex flex-col gap-4 justify-center">
+      <input type="text" id="encoder_text" class="w-3xl h-xl flex flex-col gap-4 justify-center items-center hover:shadow rounded"
+      placeholder="please enter the text for encoding">
+      <button id="encode_btn" class="bg-purple-800 active:bg-purple-600 w-lg h-8 flex justify-center shadow-2xl text-2xl bold rounded">Encode</button>
+    </div>
+    <div class="text-white bg-gray-700 text-2xl p-4 rounded flex flex-col gap-4 justify-center">
+      <input type="text" id="decoder_text" class="w-3xl h-xl flex flex-col gap-4 justify-center items-center hover:shadow rounded"
+      placeholder="please enter the text for decoding">
+      <button id="decode_btn" class="bg-purple-800 active:bg-purple-600 w-lg h-8 flex justify-center shadow-2xl text-2xl bold rounded">Decode</button>
+    </div>
+    <div class="text-white bg-gray-700 text-2xl p-4 rounded flex flex-col gap-4 justify-center">
+      <input type="number" id="shift_value" class="w-3xl h-xl flex flex-col gap-4 justify-center items-center hover:shadow rounded" 
+      placeholder="please enter the shift value as a number">
+    </div>
+    <div>
+      <p id="output" class="text-white bg-gray-700 text-2xl p-4 rounded flex flex-col gap-4 justify-center">Output</p>
+    </div>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
