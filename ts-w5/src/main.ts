@@ -279,21 +279,141 @@ console.log(sortedByCareerStart)
 
 // task8 objects-ts-8
 console.log("-----------------------task8-----------------------")
+const singerTableBody = document.getElementById("table-container");
+function renderTable(singers: Singer[]): void {
+  singerTableBody!.innerHTML = "";
+  singers.forEach(singer=> {
+    const singerRow = document.createElement("tr")
 
+    singerRow.innerHTML = `
+      <td>${singer.name}</td>
+      <td>${singer.country}</td>
+      <td>${singer.period_active.start}-${singer.period_active.end}</td>
+      <td>${singer.genre}</td>
+    `;
+    singerTableBody?.appendChild(singerRow)
+})
+}
 
+renderTable(singers)
 // task9 objects-ts-9
 console.log("-----------------------task9-----------------------")
-const singerTableBody = document.getElementById("table-container");
-singers.forEach(singer=> {
-  const singerRow = document.createElement("tr")
+document.getElementById("nameAsc")!.addEventListener("click", () => sortByName("asc"));
+document.getElementById("nameDesc")!.addEventListener("click", () => sortByName("desc"));
 
-  singerRow.innerHTML = `
-    <td>${singer.name}</td>
-    <td>${singer.country}</td>
-    <td>${singer.period_active.start}-${singer.period_active.end}</td>
-    <td>${singer.genre}</td>
-  `;
-  singerTableBody?.appendChild(singerRow)
+document.getElementById("countryAsc")!.addEventListener("click", () => sortByCountry("asc"));
+document.getElementById("countryDesc")!.addEventListener("click", () => sortByCountry("desc"));
+
+document.getElementById("genreAsc")!.addEventListener("click", () => sortByGenre("asc"));
+document.getElementById("genreDesc")!.addEventListener("click", () => sortByGenre("desc"));
+
+const singerNew :Singer[] = singers.map(singer => ({
+  ...singer,
+  period_active: { ...singer.period_active }
+}));
+function sortByName(direction: "asc" | "desc"): void {
+  singerNew.sort((a, b) => 
+    direction === "asc" ? 
+    a.name.localeCompare(b.name) 
+    : b.name.localeCompare(a.name)
+);
+  renderTable(singerNew);
+}
+
+function sortByCountry(direction: "asc" | "desc"): void {
+  singerNew.sort((a, b) => 
+    direction === "asc" ?
+    a.country.localeCompare(b.country)
+    : b.country.localeCompare(a.country)
+);
+  renderTable(singerNew);
+}
+
+function sortByGenre(direction: "asc" | "desc"): void {
+  singerNew.sort((a, b) => 
+    direction === "asc" ?
+    a.genre.localeCompare(b.genre)
+    : b.genre.localeCompare(a.genre)
+);
+  renderTable(singerNew); 
+}
+
+renderTable(singers)
+
+// task10 objects-ts-10
+console.log("-----------------------task10-----------------------")
+const searchInput = document.getElementById('searchInput') as HTMLInputElement;
+const searchButton = document.getElementById("search-button")!;
+function searchSingers(): void {
+  const query = searchInput.value.toLowerCase();
+  const filtered = singers.filter(singer =>
+    singer.name.toLowerCase().includes(query)
+  );
+  renderTable(filtered)
+}
+searchButton.addEventListener("click", searchSingers);
+
+
+// task1 Math-ts-1
+console.log("-----------------------task11-----------------------")
+const pi: number = Math.PI;
+console.log(pi)
+const piFixed: string = pi.toFixed(2);
+console.log(piFixed)
+
+
+// task2 Math-ts-2
+console.log("-----------------------task12-----------------------")
+const randomNumbers: number[] = [3.14, 193.4464, 0.8596433607, -2.940629089];
+function roundNumber(num: number[]): void {
+  num.forEach(n => {
+    console.log(`Original: ${n}, Rounded: ${Math.round(n)}`)
+  }
+)}
+roundNumber(randomNumbers)
+
+// task3 Math-ts-3
+console.log("-----------------------task13-----------------------")
+const randomNum: number = Math.random();
+console.log(randomNum)
+const randomNum10 : number = Math.floor(Math.random() * 10) + 1;
+console.log(randomNum10)
+const randomNUm100 : number = Math.floor(Math.random() * 100) + 1;
+console.log(randomNUm100)
+
+// task4 Math-ts-5
+console.log("-----------------------task15-----------------------")
+
+const weightInput = document.getElementById("weight") as HTMLInputElement
+const heightInput = document.getElementById("height") as HTMLInputElement
+const submitButton = document.getElementById("submit") as HTMLButtonElement
+const outputDiv = document.getElementById("output") as HTMLDivElement;
+submitButton.addEventListener("click", ()=> {
+  const weightKg = parseFloat(weightInput.value);
+  const heightM = parseFloat(heightInput.value);
+  if (isNaN(weightKg) || isNaN(heightM) || heightM <= 0 || weightKg <= 0) {
+    console.log("please enter a valid number above 0")
+  }
+  else {
+    const bmi = weightKg / (heightM * heightM);
+    const roundedBmi = Math.round(bmi * 100) / 100;
+    let category: string;
+    if (roundedBmi < 18.5) {
+      category = "underweight";
+    } else if (roundedBmi >= 18.5 && roundedBmi < 24.9) {
+      category = "normal weight";
+    } else if (roundedBmi >= 25.0 && roundedBmi < 29.9) {
+      category = "overweight";
+    } else {
+      category = "obesity";
+    }
+      outputDiv.innerHTML = `
+      <p><strong>Weight:</strong> ${weightKg} kg</p>
+      <p><strong>Height:</strong> ${heightM} m</p>
+      <p><strong>BMI:</strong> ${roundedBmi}</p>
+      <p><strong>Category:</strong> ${category}</p>
+    `;
+  }
 })
 
 
@@ -302,8 +422,16 @@ singers.forEach(singer=> {
 
 
 
-// task10 objects-ts-10
-console.log("-----------------------task10-----------------------")
+
+
+
+
+
+
+
+
+
+
 
 
 

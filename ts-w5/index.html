@@ -6,40 +6,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ts-w5</title>
   </head>
-  <body>
-    <div>
-      <h1 class="text-4xl bg-blue-500 pt-5">Table for metals</h1>
-      <table border="1">
+  <body class="mx-6">
+    <!-- ----------------------------------Table for metals---------------------------------- -->
+    <div class="bg-blue-300 mt-6 pt-6 pb-6">
+      <h1 class="text-4xl pb-2 mx-4">Table for metals</h1>
+      <table border="1" class="border-separate border-spacing-x-6 mx-4">
         <thead>
-          <tr class="grid grid-cols-3 gap-6">
-            <th>Name</th>
-            <th>Price Per Gram</th>
-            <th>Change</th>
+          <tr>
+            <th class="px-6 py-2">Name</th>
+            <th class="px-6 py-2">Price Per Gram</th>
+            <th class="px-6 py-2">Change</th>
           </tr>
         </thead>
-        <tbody id="metal-table"></tbody>
+        <tbody id="metal-table" class="mx-4"></tbody>
       </table>
     </div>
-    <div class="bg-yellow-500">
-      <h1 class="text-4xl pt-7">Singers</h1>
+    <!-- ----------------------------------Singer---------------------------------- -->
+    <div class="bg-yellow-500 mt-6 pt-6 pb-6">
+      <h1 class="text-4xl pb-2 mx-4">Singers</h1>
       <div>
-        <input id="searchInput" type="text" placeholder="Search by Name">
-        <button id="search-button">Search</button>
+        <input id="searchInput" type="text" placeholder="Search by Name"
+          class="rounded border-2 border-yellow-800 w-48 mt-4 mb-4 mx-4">
+        <button id="search-button" class="rounded border-2 border-yellow-800 w-18">Search</button>
       </div>
-      <div id="table-container">
+
+      <div id="sort-container" class="flex gap-10 items-center mx-8 mt-4 mb-4">
+        <details class="relative">
+          <summary>Sort by Name</summary>
+          <button id="nameAsc">Ascending</button>
+          <button id="nameDesc">Descending</button>
+        </details>
+        <details class="relative">
+          <summary>Sort by Country</summary>
+          <button id="countryAsc">Ascending</button>
+          <button id="countryDesc">Descending</button>
+        </details>
+        <div class="relative">
+          <p>Period Active</p>
+        </div>
+        <details class="relative">
+          <summary>Sort by Genre</summary>
+          <button id="genreAsc">Ascending</button>
+          <button id="genreDesc">Descending</button>
+        </details>
+      </div>
+
+
+      <div id="table-container" class="mx-4 border-separate border-spacing-x-8 border-spacing-y-2">
         <table>
           <thead>
-            <tr class="grid grid-cols-4 gap-6">
-              <th class="gap-12">name</th>
-              <th class="gap-12">country</th>
-              <th class="gap-12">period_active</th>
-              <th class="gap-12">genre</th>
+            <tr class="grid grid-cols-4 gap-6 pb-6 mx-4">
+              <th class="px-8 py-2">name</th>
+              <th class="px-8 py-2">country</th>
+              <th class="px-8 py-2">period_active</th>
+              <th class="px-8 py-2">genre</th>
             </tr>
           </thead>
         </table>
       </div>
     </div>
-
+    <!-- ----------------------------------BMI Calculation---------------------------------- -->
+    <div class="bg-purple-300 pt-6 mt-6 pb-6">
+      <h1 class="text-4xl pb-2 mx-4">BMI calculation</h1>
+      <div class="mt-6 mx-4">
+        <span>Weight Input<br></span>
+        <input type="number" id="weight" placeholder="please enter your weight in kilo"
+        class="rounded border-2 border-purple-800 w-68 pt-2 pb-2">
+      </div>
+      <div class="mt-6 mx-4">
+        <span>Height Input<br></span>
+        <input type="number" id="height" placeholder="please enter your height in meter"
+      class="rounded border-2 border-purple-800 w-68 pt-2 pb-2">
+      </div>
+      <button id="submit" class="border-2 mx-4 border-purple-400 w-24 rounded mt-4">Submit</button>
+      <div id="output" class="mx-4 mt-4">Output:</div>
+    </div>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>

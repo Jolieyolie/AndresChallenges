@@ -96,3 +96,63 @@
 - Create a nice design for this table.
 
 
+# Math-TS-1
+# Task Description
+- In this exercise, you will learn about the [Math.PI](https://www.w3schools.com/jsref/jsref%5Fpi.asp) object.
+- Display Math.PI in the console.
+- Declare const PI with the appropriate value.
+- Round the value of PI to two decimal places and assign the value to the variable roundedPI.
+- Output roundedPI in the console.
+- **Please adhere to the Typescript standard.**
+
+# Math-TS-2
+# Task Description
+- Learning objective: Use and understand [Math.round](https://www.w3schools.com/jsref/jsref_round.asp).
+- **Please adhere to the Typescript standard.**
+- Write a function that rounds a number.
+- Use the numbers from the code snippet.
+
+
+- Then output the result in the console.
+
+# Math-TS-3(4 is the same)
+# Task
+- This exercise is about [[Math.random()](https://www.w3schools.com/jsref/jsref%5Frandom.asp) and [Math.floor()](https://www.w3schools.com/jsref/jsref%5Ffloor.asp).
+- Declare the variable randomNum and output a random number in it.
+- Declare the variable randomNum1\_10 and output a random number between 1 and 10.
+- Declare the variable randomNum1\_100 and output a random number between 1 and 100.
+- **Please adhere to the Typescript standard.**
+
+# Math-TS-5
+# Task Description
+- **Learning objective**: Practice prompt() input handling, number conversion/validation, and math formulas with rounding.
+- Write a small program that works as follows:
+1. Ask the user for **weight in kg** (e.g., 72.5).
+2. Ask the user for **height in meters** (e.g., 1.68).
+3. Calculate the BMI using:
+
+```tsx
+ const bmi = weightKg / (heightM * heightM);
+```
+
+1. Round the BMI to **2 decimal places** and print to the console:
+- weight, height, BMI
+- a category based on the BMI:
+- < 18.5 underweight
+- 18.5–24.9 normal
+- 25–29.9 overweight
+- >= 30 obesity
+1. If any input is invalid (null/empty, not a number, or ≤0), print an error message and stop.
+
+
+
+
+
+
+
+
+
+
+
+
+
