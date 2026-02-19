@@ -4,6 +4,7 @@ import {Car} from "./CarClass";
 import {Driver} from "./CarClass";
 import {Series, Actors, Episode} from "./TVClass";
 import {Animal, Person2} from "./AnimalClass";
+import {Customer} from "./CustomerClass";
 
 import "./main";
 
@@ -93,6 +94,27 @@ console.log(alice.getInfo());
 console.log("---------------------task8-------------------------")
 console.log(driver1.getLicenseInfo(), driver1.getCarType());
 console.log(car1.getConstructionYear(), car1.getSpeedInfo())
+
+// oop-ts-task9
+console.log("---------------------task9-------------------------")
+const customer1 = new Customer("John Doe", "john.doe@example.com", "123 Main St", "12345", "Anytown");
+console.log(customer1.getName());
+console.log(customer1.getEmail());
+console.log(customer1.getAddress());
+console.log(customer1.getPostalCode());
+console.log(customer1.getCity());
+
+customer1.setName("Jane Doe");
+customer1.setEmail("jane.doe@example.com");    
+customer1.setAddress("456 Elm St");
+customer1.setPostalCode("54321");
+customer1.setCity("Othertown");
+
+console.log(customer1.getName())
+console.log(customer1.getEmail());
+console.log(customer1.getAddress());
+console.log(customer1.getPostalCode());
+console.log(customer1.getCity());   
 
 
 

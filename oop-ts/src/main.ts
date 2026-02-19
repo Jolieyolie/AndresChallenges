@@ -54,18 +54,56 @@ flavors.forEach(flavor => {
   console.log("Total Price for 3 scoops:", flavor.getTotalprice(3));
 })
 
+// bonus
+const vanillaPrice = document.getElementById("vanillaPrice") as HTMLElement;
+const chocoPrice = document.getElementById("chocoPrice") as HTMLElement;
+const strawberryPrice = document.getElementById("strawberryPrice") as HTMLElement;
+const vanillaQuantity = document.getElementById("vanillaScoop") as HTMLElement;
+const chocoQuantity = document.getElementById("chocoScoop") as HTMLElement;
+const strawberryQuantity = document.getElementById("strawberryScoop") as HTMLElement;
+const vanillaOutput = document.getElementById("vanillaTotal") as HTMLOutputElement;
+const chocoOutput = document.getElementById("chocoTotal") as HTMLOutputElement;
+const strawberryOutput = document.getElementById("strawberryTotal") as HTMLOutputElement;
 
+const vanillaBtn = document.getElementById("vanillaAdd") as HTMLButtonElement;
+const chocoBtn = document.getElementById("chocoAdd") as HTMLButtonElement;
+const strawberryBtn = document.getElementById("strawberryAdd") as HTMLButtonElement;
+const resetBtn = document.getElementById("reset") as HTMLButtonElement;
 
+let vanillaScoop = 0;
+let chocoScoop = 0;
+let strawberryScoop = 0;
+vanillaBtn.addEventListener("click", () => {
+ vanillaScoop  += 1
+ const price = Number(vanillaPrice.textContent)
+ vanillaQuantity.textContent = String(vanillaScoop)
+  vanillaOutput.textContent =String((price * vanillaScoop).toFixed(2))
+})
 
+chocoBtn.addEventListener("click", () => {
+  chocoScoop += 1
+  const price = Number(chocoPrice.textContent)
+  chocoQuantity.textContent = String(chocoScoop)
+  chocoOutput.textContent = String((price * chocoScoop).toFixed(2))
+})
 
+strawberryBtn.addEventListener("click", () => {
+  strawberryScoop += 1
+  const price = Number(strawberryPrice.textContent)
+  strawberryQuantity.textContent = String(strawberryScoop)
+  strawberryOutput.textContent = String((price * strawberryScoop).toFixed(2))
+})
 
-
-
-
-
-
-
-
-
+resetBtn.addEventListener("click", () => {
+  vanillaScoop = 0;
+  chocoScoop = 0;
+  strawberryScoop = 0;
+  vanillaQuantity.textContent = String(0)
+  vanillaOutput.textContent =String(vanillaScoop.toFixed(2))
+  chocoQuantity.textContent = String(0)
+  chocoOutput.textContent =String(vanillaScoop.toFixed(2))
+  strawberryQuantity.textContent = String(0)
+  strawberryOutput.textContent =String(vanillaScoop.toFixed(2))
+})
 
 
