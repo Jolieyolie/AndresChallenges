@@ -381,6 +381,15 @@ console.log(randomNum10)
 const randomNUm100 : number = Math.floor(Math.random() * 100) + 1;
 console.log(randomNUm100)
 
+// task4 Math-ts-4
+console.log("-----------------------task14-----------------------")
+const numbers: number[] = [399,10,186,45,9,171,491,128,24,288,56,444,217,111,187,89,270,485,481,179,290,14,292,250,463,189,434,184,124,443,119,23,453,305,68,477,58,90,347,147,64,259,131,153,29,116];
+console.log(numbers)
+const minNum: number = Math.min(...numbers)
+console.log(minNum)
+const maxNum:number = Math.max(...numbers)
+console.log(maxNum)
+
 // task4 Math-ts-5
 console.log("-----------------------task15-----------------------")
 

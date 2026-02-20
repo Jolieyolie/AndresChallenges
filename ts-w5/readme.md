@@ -115,12 +115,25 @@
 
 - Then output the result in the console.
 
-# Math-TS-3(4 is the same)
+# Math-TS-3
 # Task
 - This exercise is about [[Math.random()](https://www.w3schools.com/jsref/jsref%5Frandom.asp) and [Math.floor()](https://www.w3schools.com/jsref/jsref%5Ffloor.asp).
 - Declare the variable randomNum and output a random number in it.
 - Declare the variable randomNum1\_10 and output a random number between 1 and 10.
 - Declare the variable randomNum1\_100 and output a random number between 1 and 100.
+- **Please adhere to the Typescript standard.**
+
+# Math-TS-4
+# Task Description
+- In this exercise, you will learn about [Math.min](https://www.w3schools.com/jsref/jsref%5Fmin.asp) and [Math.max](https://www.w3schools.com/jsref/jsref%5Fmax.asp).
+- Use Math.min to find the lowest value from the numbers in the code snippet.
+- Now use Math.max to find the highest value from the numbers in the code snippet
+
+```tsx
+const numbers: number[] = [399,10,186,45,9,171,491,128,24,288,56,444,217,111,187,89,270,485,481,179,290,14,292,250,463,189,434,184,124,443,119,23,453,305,68,477,58,90,347,147,64,259,131,153,29,116];
+```
+
+- Display the result on the console.
 - **Please adhere to the Typescript standard.**
 
 # Math-TS-5
