@@ -1,6 +1,9 @@
 import './style.css'
-import type { AnimalKind, AnimalCatalogItem, AnimalList, EnclosureKind  } from './typeClass';
-import { ANIMAL_CATALOG,  ENCLOSURE_KINDS } from './typeClass'
+import { enclosures, type EnclosureKind  } from './typeClass';
+
+import { MainAnimal } from './classes/mainAnimal';
+import ANIMAL_CATALOG from './classes/animalCatalog';
+// import { Enclosure } from './classes/enclosure';
 
 // Add animal
 
@@ -32,16 +35,16 @@ if (continent instanceof HTMLSelectElement) {
 // enclosure option
 const enclosure = document.getElementById("enclosureSelect") as HTMLSelectElement;
 if (enclosure instanceof HTMLSelectElement) {
-    ENCLOSURE_KINDS.forEach((kind) => {
+    enclosures.forEach((kind) => {
         const option: HTMLOptionElement = document.createElement("option")
-        option.value = kind
-        option.textContent = kind
+        option.value = kind.getLabel()
+        option.textContent = kind.getLabel()
         enclosure.appendChild(option)
     })
 }
 
 
-const addedList: AnimalList[] = [];
+const addedList: MainAnimal[] = [];
 const addBtn = document.getElementById("addBtn") as HTMLButtonElement;
 if(addBtn instanceof HTMLButtonElement) {
     addBtn.addEventListener("click", ()=> {
@@ -52,13 +55,15 @@ if(addBtn instanceof HTMLButtonElement) {
         const enclosureSelect = document.getElementById("enclosureSelect") as HTMLSelectElement;
         const needsInput = document.getElementById("needsInput") as HTMLInputElement;
         
-        const newAnimal: AnimalList = {
-            species: speciesSelect.value,
+        const newAnimal: MainAnimal = {
+            emoji: '🦁',
             name: nameInput.value,
+            species: speciesSelect.value,
+            kind: 'Mammal',
             yearOfBirth: Number(birthInput.value),
             origin: continentSelect.value,
-            enclosure: enclosureSelect.value as EnclosureKind,
-            specialNeed: needsInput.value
+            specialNeed: needsInput.value,
+            enclosure: enclosureSelect.value as unknown as EnclosureKind,
         }
 
         addedList.push(newAnimal);
@@ -67,5 +72,6 @@ if(addBtn instanceof HTMLButtonElement) {
         console.log("All animals:", addedList)
         })
 }
+const bella = new MainAnimal('🐻', 'Bella', 'bear', 'Mammal', 2008, 'Africa', 'eating berries', {id:1, label:'Jungle Habitat', capacity:3} )
 
-
+console.log(bella)
