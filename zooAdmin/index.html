@@ -9,7 +9,7 @@
   <body>
     <div class="mt-6 mx-6">
       <h1 class="text-4xl font-bold">Zoo Administration</h1>
-      <p class="text-gray-500 mt-4">OOP demp: classes, inheritance, polymorphism, encapsulation, abstraction</p>
+      <p class="text-gray-500 mt-4">OOP demo: classes, inheritance, polymorphism, encapsulation, abstraction</p>
     </div>
     <div class="grid grid-cols-2 gap-2 w-auto text-gray-700">
     <!-- add animal -->
@@ -21,11 +21,11 @@
         </div>  
         <div class="flex flex-row gap-12 py-2">
           <p>Name</p>
-          <Input type="text" placeholder="e.g. Nala" id="nameInput" class="border-2 border-gray-200 rounded w-full px-2 py-2"></Input>
-        </div>
+          <Input type="text" placeholder="e.g. Nala" id="nameInput" class="border-2 border-gray-200 rounded w-full px-2 py-2">
+        </div> 
         <div class="flex flex-row gap-12 py-2">
           <p>Year of birth</p>
-          <input type="number" id="birthInput" placeholder="please enter year in full four digits" class="border-2 border-gray-200 rounded w-full px-2 py-2"></Input>
+          <input type="number" id="birthInput" placeholder="please enter year in full four digits" class="border-2 border-gray-200 rounded w-full px-2 py-2">
         </div>
         <div class="flex flex-row gap-12 py-2">
           <p>Continent</p>
@@ -37,31 +37,31 @@
         </div>
         <div class="flex flex-row gap-12 py-2">
           <p>Special needs</p>
-          <Input type="text" placeholder="optional" id="needsInput" class="border-2 border-gray-200 rounded w-full px-2 py-2"></Input>
+          <Input type="text" placeholder="optional" id="needsInput" class="border-2 border-gray-200 rounded w-full px-2 py-2">
         </div>
         <button id="addBtn" class="w-full bg-gray-300 rounded gap-4 mt-2 pt-2 pb-2">Add</button>
       </div>
             
       <!-- move animal -->
       <div class="border-2 border-gray-200 rounded-2xl mt-6 mx-6 px-4 py-4">
-        <p>Move animal</p>
-        <div>
+        <p class="font-bold text-xl">Move animal</p>
+        <div class="flex flex-row gap-12 py-2">
           <p>Animal</p>
-          <select name="moveAnimal" id="moveOption"></select>
+          <select name="moveAnimal" id="moveOption" class="border-2 border-gray-200 rounded w-full px-2 py-2"></select>
         </div>
-        <div>
+        <div class="flex flex-row gap-12 py-2">
           <p>Target enclosure</p>
-          <select name="target" id="targetOption"></select>
+          <select name="target" id="targetOption" class="border-2 border-gray-200 rounded w-full px-2 py-2"></select>
         </div>
         <button id="moveBtn" class="w-full bg-gray-300 rounded gap-4 mt-2 pt-2 pb-2">Move</button>
       </div>
     </div>
     <!-- Enclosure -->
     <div id="Enclosure" class="border-2 border-gray-200 rounded-2xl mt-6 mx-6 px-4 py-4">
-      <p>Enclosures</p>
+      <p class="font-bold text-xl">Enclosures</p>
       <div class="grid grid-cols-2">
         <div id="Savannah" class="enclosure">
-          <p>Savannah Habitat</p>
+          <p class="">Savannah Habitat</p>
           <div class="animalList"></div>
         </div>
         <div id="Jungle" class="enclosure">
