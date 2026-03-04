@@ -37,7 +37,7 @@
         </div>
         <div class="flex flex-row gap-12 py-2">
           <p>Special needs</p>
-          <Input type="text" placeholder="optional" id="needsInput" class="border-2 border-gray-200 rounded w-full px-2 py-2">
+          <Input type="text" placeholder="optional (comma separated)" id="needsInput" class="border-2 border-gray-200 rounded w-full px-2 py-2">
         </div>
         <button id="addBtn" class="w-full bg-gray-300 rounded gap-4 mt-2 pt-2 pb-2">Add</button>
       </div>
@@ -58,33 +58,35 @@
     </div>
     <!-- Enclosure -->
     <div id="Enclosure" class="border-2 border-gray-200 rounded-2xl mt-6 mx-6 px-4 py-4">
-      <p class="font-bold text-xl">Enclosures</p>
-      <div class="grid grid-cols-2">
-        <div id="Savannah" class="enclosure">
-          <p class="">Savannah Habitat</p>
-          <div class="animalList"></div>
+
+        <p class="font-bold text-xl">Enclosures</p>
+        <div class="grid grid-cols-2 gap-4">
+          <div id="Savannah" class="enclosure border-2 border-gray-200 rounded-2xl mt-2 px-4 py-4">
+            <p class="">Savannah Habitat</p>
+            <div class="animalList"></div>
+          </div>
+          <div id="Jungle" class="enclosure border-2 border-gray-200 rounded-2xl mt-2 px-4 py-4">
+            <p>Jungle Habitat</p>
+            <div class="animalList border-2 border-gray-200 rounded-2xl mt-2 px-4 py-4"></div>
+          </div>
+            <div id="Arctic" class="enclosure border-2 border-gray-200 rounded-2xl mt-2 px-4 py-4">
+            <p>Arctic landscape</p>
+            <div class="animalList"></div>
+          </div>
+          <div id="Marine" class="enclosure border-2 border-gray-200 rounded-2xl mt-2 px-4 py-4">
+            <p>Marine</p>
+            <div class="animalList"></div>
+          </div>
+          <div id="Desert" class="enclosure border-2 border-gray-200 rounded-2xl mt-2 px-4 py-4">
+            <p>Desert</p>
+            <div class="animalList"></div>
+          </div>
+          <div id="RainForest" class="enclosure border-2 border-gray-200 rounded-2xl mt-2 px-4 py-4">
+            <p>Rain Forest</p>
+            <div class="animalList"></div>
+          </div>
         </div>
-        <div id="Jungle" class="enclosure">
-          <p>Jungle Habitat</p>
-          <div class="animalList"></div>
-        </div>
-          <div id="Arctic" class="enclosure">
-          <p>Arctic landscape</p>
-          <div class="animalList"></div>
-        </div>
-        <div id="Marine" class="enclosure">
-          <p>Marine</p>
-          <div class="animalList"></div>
-        </div>
-        <div id="Desert" class="enclosure">
-          <p>Desert</p>
-          <div class="animalList"></div>
-        </div>
-        <div id="RainForest" class="enclosure">
-          <p>Rain Forest</p>
-          <div class="animalList"></div>
-        </div>
-      </div>
+
     </div>
 
     <div id="app"></div>

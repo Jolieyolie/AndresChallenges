@@ -85,19 +85,25 @@ if (addBtn instanceof HTMLButtonElement) {
             
         addedList.push(newAnimal);
         renderMoveOptions();
+        renderEnclosureLists();
 
 
         console.log("added:", newAnimal)
         console.log("All animals:", addedList)
         })
 }
-const bella = new MainAnimal('🐻', 'Bella', 'bear', 'Mammal', 2008, 'Africa', 'eating berries', {id:1, label:'Jungle Habitat', capacity:3} )
-
-console.log(bella)
 // animal selection 
 const moveOption = document.getElementById("moveOption") as HTMLSelectElement;
 const targetOption = document.getElementById("targetOption") as HTMLSelectElement;
 const moveBtn = document.getElementById("moveBtn") as HTMLButtonElement;
+const ENCLOSURE_CONTAINER_IDS: Record<number, string> = {
+    1: "Savannah",
+    2: "Jungle",
+    3: "Arctic",
+    4: "Marine",
+    5: "Desert",
+    6: "RainForest",
+};
 
 const renderMoveOptions = (): void => {
     if (!(moveOption instanceof HTMLSelectElement)) return;
@@ -126,8 +132,82 @@ const renderTargetOptions = (): void => {
         targetOption.appendChild(option)
 })
 };
+
+const renderEnclosureLists = (): void => {
+    const currentYear = new Date().getFullYear();
+    const occupancyByEnclosure = new Map<number, number>();
+
+    addedList.forEach((animal) => {
+        const currentCount = occupancyByEnclosure.get(animal.enclosure.id) ?? 0;
+        occupancyByEnclosure.set(animal.enclosure.id, currentCount + 1);
+    });
+
+    enclosures.forEach((enclosure) => {
+        const enclosureId = enclosure.getId();
+        const containerId = ENCLOSURE_CONTAINER_IDS[enclosureId];
+        if (!containerId) return;
+
+        const enclosureCard = document.getElementById(containerId);
+        if (!(enclosureCard instanceof HTMLDivElement)) return;
+
+        const currentOccupancy = occupancyByEnclosure.get(enclosureId) ?? 0;
+        const enclosureTitle = enclosureCard.querySelector("p");
+
+        if (enclosureTitle instanceof HTMLParagraphElement) {
+            enclosureTitle.textContent = `${enclosure.getLabel()} (${currentOccupancy}/${enclosure.getCapacity()})`;
+        }
+
+        const listElement = enclosureCard.querySelector(".animalList");
+        if (!(listElement instanceof HTMLDivElement)) return;
+
+        listElement.innerHTML = "";
+
+        const animalsInEnclosure = addedList.filter(
+            (animal) => animal.enclosure.id === enclosureId
+        );
+
+        animalsInEnclosure.forEach((animal) => {
+            const animalCard = document.createElement("div");
+            animalCard.className = "border border-gray-200 rounded-lg p-2 mt-2";
+
+            const animalInfo = document.createElement("p");
+            const age = Math.max(0, currentYear - animal.yearOfBirth);
+            animalInfo.textContent =
+                `${animal.emoji} ${animal.name} ${animal.species} (${age} - ${animal.origin})`;
+            animalCard.appendChild(animalInfo);
+
+            const needsWrap = document.createElement("div");
+            needsWrap.className = "flex flex-wrap gap-2 mt-2";
+
+            const parsedNeeds = animal.specialNeed
+                .split(/[,;\n]+/)
+                .map((need) => need.trim())
+                .filter((need) => need.length > 0);
+
+            if (parsedNeeds.length === 0) {
+                const emptyNeedBadge = document.createElement("span");
+                emptyNeedBadge.className = "text-xs bg-gray-100 border border-gray-200 rounded-full px-2 py-1";
+                emptyNeedBadge.textContent = "No special needs";
+                needsWrap.appendChild(emptyNeedBadge);
+            } else {
+                parsedNeeds.forEach((need) => {
+                    const needBadge = document.createElement("span");
+                    needBadge.className = "text-xs border border-gray-300 rounded-full px-2 py-1";
+                    needBadge.textContent = need;
+                    needsWrap.appendChild(needBadge);
+                });
+            }
+
+            animalCard.appendChild(needsWrap);
+            listElement.appendChild(animalCard);
+        });
+    });
+};
+
 renderTargetOptions();
 renderMoveOptions();
+renderEnclosureLists();
+
 // move btn
 if (
     moveBtn instanceof HTMLButtonElement &&
@@ -137,6 +217,7 @@ if (
     moveBtn.addEventListener("click", () => {
         const animalIndex = Number(moveOption.value);
         const targetEnclosureId = Number(targetOption.value);
+        
 
         if (
             Number.isNaN(animalIndex) ||
@@ -156,6 +237,11 @@ if (
             return;
         }
 
+        if (addedList[animalIndex].enclosure.id === targetEnclosureId) {
+            alert("Animal is already in this enclosure.");
+            return;
+        }
+
         const targetCount = addedList.filter(
             (animal) => animal.enclosure.id === targetEnclosureId
         ).length;
@@ -172,6 +258,7 @@ if (
         };
 
         renderMoveOptions();
+        renderEnclosureLists();
         moveOption.value = animalIndex.toString();
 
         console.log("Moved:", addedList[animalIndex]);
