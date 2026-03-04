@@ -207,7 +207,43 @@
         </div>
       </div>
     </section>
+
+
+    <section>
+      <h3>Exercise 1 — Timers basics</h3>
+      <div class="row">
+        <label>Seconds: <input id="ex1Seconds" type="number" min="0" value="2" /></label>
+        <button id="ex1Btn">Run</button>
+        <button id="ex1PreviewBtn" type="button">Run preview</button>
+      </div>
+      <pre id="ex1Out"></pre>
+    </section>
+
+    <section>
+      <h3>Exercise 2 — Button countdown 100% → 0%</h3>
+      <div class="row">
+        <button id="ex2Btn">Start countdown</button>
+        <span id="ex2Text" class="mono">100%</span>
+        <div class="bar" aria-label="progress"><div id="ex2Bar"></div></div>
+      </div>
+      <pre id="ex2Out"></pre>
+    </section>
+
+    <section>
+      <h3>Exercise 3 — Browser info (navigator/screen)</h3>
+      <button id="ex3Btn">Load browser info</button>
+      <div id="ex3Grid" class="grid" style="margin-top: 10px;"></div>
+    </section>
+
+    <section>
+      <h3>Exercise 4 — Auto countdown on page load</h3>
+      <div class="big" id="ex4Number">10</div>
+      <div class="mono" id="ex4Status">Waiting…</div>
+    </section> 
+
     <script type="module" src="/src/main.ts"></script>
     <script type="module" src="/src/oop.ts"></script>
+    <script type="module" src="/src/BOM.ts"></script>
+
   </body>
 </html>

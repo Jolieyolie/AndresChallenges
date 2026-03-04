@@ -366,3 +366,5 @@ slither.eat(); // Slither is eating mice
 const pets: Animal3[] = [polly, slither];
 pets.forEach(pet => pet.eat());
 pets[0].sleep(8) // Polly sleeps for 8 hours \n Slither sleeps for 8 hours
+
+
