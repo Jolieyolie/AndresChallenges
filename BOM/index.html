@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bom-ts</title>
+  </head>
+  
+  <body>
+    <div id="minuteCountdownArea">
+      <p>Minute countdown:</p>
+      <div id="time">00:00</div>
+      <input id="minutes" type="text" placeholder="Minutes remaining..." />
+      <br />
+      <button id="start-button">Start countdown</button>
+      <br />
+      <button id="pause-button">Pause countdown</button>
+      <br />
+      <button id="restart-button">Restart countdown</button>
+    </div>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
