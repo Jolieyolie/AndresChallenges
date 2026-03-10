@@ -1,5 +1,6 @@
 import './style.css'
 
+// task1 - Bom
 function getEl<T extends Element>(selector: string): T {
   const el = document.querySelector(selector);
   if(!el) throw new Error(`Miss element: ${selector}`)
@@ -22,17 +23,6 @@ function formatTime(seconds: number): string {
 
   return `${mm}: ${ss}`
 }
-
-// function runCountDown(): void {
-//   let input = Number(timeInput.value)
-//   const id = setInterval(() => {
-//     if (input > 0) {
-//       input -= 1
-//     } else {
-//       clearInterval(id)
-//     }
-//   }, 60000)
-// }
 
 let totalSeconds = 0;
 let intervalId: number | null = null;
@@ -90,3 +80,5 @@ pauseBtn.addEventListener('click', ()=> {
 })
 
 render()
+
+// task2-Type & Error 1
